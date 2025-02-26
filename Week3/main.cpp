@@ -67,7 +67,7 @@
         #include<iostream>
         using namespace std;
         
-        //int print(int x)
+        //int print(int x) //Print Numbers from n to zero
         //{
         //	if (x < 0)
         //	{
@@ -77,30 +77,56 @@
         //	print(x - 1);
         //}
         
-        int Binomial(int a, int b) {
-            if (a == b || b==0) {
+        //int Binomial(int a, int b) {
+        //	if (a == b || b==0) {
+        //		return 1;
+        //	}
+        //	else
+        //	{
+        //		return(Binomial(a - 1, b - 1) + Binomial(a - 1, b));
+        //	}
+        //}
+        
+        int Prime(int c, int d = -1) 
+        {
+            if (d == -1) {
+                d = c - 1;
+            }
+        
+            if (c <= 1) {
+                cout << "Invalid Input\n";
                 return 1;
             }
-                return(Binomial(a - 1, b - 1) + Binomial(a - 1, b));
+        
+            if (c == 2) {
+                cout << c << " is Prime!\n";
+                exit(1);
+            }
+        
+            if (d == 1) {
+                cout << c << " is Prime!\n";
+            }
+        
+            if (c % d == 0)
+            {
+                cout << c << " is Composite!\n";
+                return 1;
+            }
+        
+            return Prime(c, d - 1);
         }
         
         int main()
         {
             /*int a = 9;
             print(a);*/
-            int x = 0, int y = 0;
+            
+            /*cout << endl << Binomial(7,10);*/
         
-            cout << "k: ";
-            cin >> x;
-            cout << "n: ";
-            cin >> y;
-        
-            if (x < 0 || x > y) {
-                cout << "Error!\n";
-                return 1;
-            }
-        
-            cout << endl << Binomial(x,y);
+            Prime(27);
+            Prime(13);
+            Prime(-33);
+            Prime(2);
         
             return 0;
         }
