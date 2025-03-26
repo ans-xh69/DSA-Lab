@@ -1,0 +1,24 @@
+#include <iostream>
+#include "list.cpp"
+
+using namespace std;
+
+int main() {
+    string input, reversed;
+    List <char> l;
+
+    cout << "Enter a string: ";
+    cin >> input;
+
+    for (char c : input) {
+        l.push(c);
+    }
+
+    while (!l.emptyList()) {
+        reversed += l.pop();
+    }
+
+    cout << "Reversed string: " << reversed << endl;
+
+    return 0;
+}
