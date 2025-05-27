@@ -1,5 +1,5 @@
-#include<iostream>
 //#include<stdafx.h>
+#include<iostream>
 using namespace std;
 
 template <class T>
@@ -97,8 +97,8 @@ T double_linked<T>::pop_front() {
 }
 
 int main() {
-	int arr[] = { 4,6,8,32,19 };
-	double_linked <int> dlist(arr);
+	long arr[] = { 4,6,8,32,19 };
+	double_linked <long> dlist(arr);
 
 	dlist.push_back(11);
 	dlist.push_front(100);
